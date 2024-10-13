@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web音乐系统安装向导</title>
+<style>
+    body { font-family: 'Arial', sans-serif; }
+    .installer-container { max-width: 600px; margin: auto; padding: 20px; }
+    .installer-step { margin-bottom: 20px; }
+    .installer-step h2 { color: #007bff; }
+    .installer-step p { color: #333; }
+    .installer-step button { background-color: #28a745; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    .installer-step button:hover { background-color: #218838; }
+    .installer-step input[type="checkbox"] { margin-right: 5px; }
+</style>
+</head>
+<body>
+<div class="installer-container">
+    <!-- 欢迎界面 -->
+    <div id="welcome" class="installer-step">
+        <h2>欢迎安装Web音乐系统</h2>
+        <p>请按照向导步骤完成安装</p>
+        <button onclick="showStep('userAgreement')">下一步</button>
+    </div>
+
+    <!-- 用户协议 -->
+    <div id="userAgreement" class="installer-step" style="display:none;">
+        <h2>用户协议</h2>
+        <p>请阅读并同意以下用户协议。</p>
+        <input type="checkbox" id="userAgreementCheckbox" required>
+        <label for="userAgreementCheckbox">我已阅读并同意用户协议</label>
+        <button onclick="checkAgreement()">安装</button>
+        <h6>冷淡音乐系统开源项目用户协议<br><br>1. 协议接受<br>欢迎您使用冷淡音乐系统。本系统是一个开源项目，您可以自由下载、使用、修改和重新分发。在您开始使用本系统之前，请仔细阅读本用户协议。使用本系统即表示您已完全接受本协议的所有条款和条件。<br><br>2. 用户责任<br><br>用户在使用本系统时，必须遵守所有适用的法律法规。<br>用户负责确保其服务器环境符合本系统运行的要求，并对本系统的安装、配置和维护负责。<br> 1.根据《中华人民共和国著作法》
+第二条 中国公民、法人或者非法人组织的作品，不论是否发表，依照本法享有著作权。
+外国人、无国籍人的作品根据其作者所属国或者经常居住地国同中国签订的协议或者共同参加的国际条约享有的著作权，受本法保护。
+外国人、无国籍人的作品首先在中国境内出版的，依照本法享有著作权。
+未与中国签订协议或者共同参加国际条约的国家的作者以及无国籍人的作品首次在中国参加的国际条约的成员国出版的，或者在成员国和非成员国同时出版的，受本法保护。
+第三条 本法所称的作品，是指文学、艺术和科学领域内具有独创性并能以一定形式表现的智力成果，包括：
+（一）文字作品；
+（二）口述作品；
+（三）音乐、戏剧、曲艺、舞蹈、杂技艺术作品；
+（四）美术、建筑作品；
+（五）摄影作品；
+（六）视听作品；
+（七）工程设计图、产品设计图、地图、示意图等图形作品和模型作品；
+（八）计算机软件；
+（九）符合作品特征的其他智力成果。
+第四条 著作权人和与著作权有关的权利人行使权利，不得违反宪法和法律，不得损害公共利益。国家对作品的出版、传播依法进行监督管理。
+第五条 本法不适用于：
+（一）法律、法规，国家机关的决议、决定、命令和其他具有立法、行政、司法性质的文件，及其官方正式译文；
+（二）单纯事实消息；
+（三）历法、通用数表、通用表格和公式。
+第六条 民间文学艺术作品的著作权保护办法由国务院另行规定。
+第七条 国家著作权主管部门负责全国的著作权管理工作；县级以上地方主管著作权的部门负责本行政区域的著作权管理工作。
+第八条 著作权人和与著作权有关的权利人可以授权著作权集体管理组织行使著作权或者与著作权有关的权利。依法设立的著作权集体管理组织是非营利法人，被授权后可以以自己的名义为著作权人和与著作权有关的权利人主张权利，并可以作为当事人进行涉及著作权或者与著作权有关的权利的诉讼、仲裁、调解活动。
+著作权集体管理组织根据授权向使用者收取使用费。使用费的收取标准由著作权集体管理组织和使用者代表协商确定，协商不成的，可以向国家著作权主管部门申请裁决，对裁决不服的，可以向人民法院提起诉讼；当事人也可以直接向人民法院提起诉讼。
+著作权集体管理组织应当将使用费的收取和转付、管理费的提取和使用、使用费的未分配部分等总体情况定期向社会公布，并应当建立权利信息查询系统，供权利人和使用者查询。国家著作权主管部门应当依法对著作权集体管理组织进行监督、管理。
+著作权集体管理组织的设立方式、权利义务、使用费的收取和分配，以及对其监督和管理等由国务院另行规定。
+用户上传至本系统的任何音乐内容，必须符合当地法律法规，并且不侵犯任何第三方的版权或其他合法权益。用户上传的内容若违反法律法规或本协议规定，用户需自行承担相应的法律责任。<br><br>3. 免责声明<br><br>本系统及其内容提供方不承担因用户使用本系统而产生的任何直接、间接、偶然、特殊及后续的损害赔偿责任。<br>本系统不负责监控用户上传的音乐内容，也不对任何因使用本系统而产生的损害负责。<br><br>4. 修改协议<br>本系统保留随时修改本协议的权利。修改后的协议一旦在本系统上发布即刻生效。用户继续使用本系统将被视为接受修改后的协议。<br><br>5. 联系方式<br>如果您对本协议有任何疑问或需要帮助，请通过以下方式联系我们：<br><br>电子邮箱：[您的联系邮箱]<br>官方网站：[您的网站]</h6>
+    </div>
+</div>
+
+<script>
+function showStep(stepId) {
+    // 隐藏所有步骤
+    var steps = document.getElementsByClassName('installer-step');
+    for (var i = 0; i < steps.length; i++) {
+        steps[i].style.display = 'none';
+    }
+    // 显示当前步骤
+    document.getElementById(stepId).style.display = 'block';
+}
+
+function checkAgreement() {
+    var checkbox = document.getElementById('userAgreementCheckbox');
+    if (checkbox.checked) {
+        // 用户同意协议，跳转到安装进度页面
+        window.location.href = 'installationProgress_5.php'; // 假设这是安装进度页面
+    } else {
+        alert('您必须同意用户协议才能继续安装。');
+    }
+}
+</script>
+</body>
+</html>
